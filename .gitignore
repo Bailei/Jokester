@@ -18,6 +18,3 @@ doc/
 .DS_Store
 .idea
 .secret
-
-MyApp::Application.config.secret_token = ENV['SECRET_TOKEN']
-SECRET_TOKEN=5d535f92fe171422f7d538bf1d596f52f92385d5a26fd1f7d6a8ccca5ad29ce920c35f6e3c11566d60be78c926de88f77f352e9ea8f157a107a99cf8c6f5ce6b
