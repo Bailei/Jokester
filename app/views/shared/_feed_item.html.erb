@@ -1,0 +1,42 @@
+<div class="container container-control" id="<%= feed_item.id %>">
+    <div class="panel panel-default">
+            <div class="media-heading user-name">
+                <%= feed_item.name %>
+            </div>
+        
+            <div class="media-body episode-script-content">
+                <%= feed_item.script %>
+            </div>
+    
+            <div class="media-body episode-image-content">
+                <%= image_tag feed_item.image_url %>
+            </div>
+
+            <div class="media-body episode-post-time">
+                <% 
+                   tmp_time = feed_item.created_at
+                   res = tmp_time.to_s.split()
+                   res = res[0..(res.length-2)]
+                   created_at_time = res.join(" ")
+                %>
+                <%= created_at_time %>
+            </div>
+   
+            <div class="media-body">
+                <div style="float:left;padding-right:25px;padding-left:30px">
+                    <img src="/good.png" onClick="estimate(<%=feed_item.id %>, 'good')">
+                    <p style="padding-left:24px" id="<%= feed_item.id %>-good"><%= feed_item.good_num %></p>
+                </div>
+            
+                <div style="float:left;padding-top:2px;padding-right:27px">
+                    <img src="/bad.png" onClick="estimate(<%=feed_item.id %>, 'bad')">
+                    <p style="padding-left:24px" id="<%= feed_item.id %>-bad"><%= feed_item.bad_num %></p>
+                </div>
+                
+                <div style="padding-top:23px">
+                    <%= feed_item.comment_num %>
+                    <%=link_to "Comments", {:controller=>'renders', :action=>'dashboard', :episode_id=>feed_item.id} %>
+                </div>
+            </div>
+    </div>
+</div>

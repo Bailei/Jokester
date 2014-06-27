@@ -11,6 +11,15 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about', via:'get'
   match '/contact', to: 'static_pages#contact', via:'get'
 
+  resources :episodes
+  match "/renders/dashboard", to:"renders#dashboard", via: 'get'
+  match "/upload", to: "episodes#new",  via: 'get' 
+  #root to: "renders#home"
+  match "/estimate", to: "renders#estimate", via: 'post'
+  match "/renders/produce", to: "renders#produce", via: 'post'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

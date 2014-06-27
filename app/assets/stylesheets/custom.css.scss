@@ -1,8 +1,59 @@
+$panel-inner-border:#FF0000;
+$panel-primary-text:#000000;
+
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-
 $grayMediumLight: #eaeaea;
+
+.main-page-title {
+    text-align:center;
+    padding-bottom:15px;
+    padding-top:15px;
+    font-weight:bold;
+    font-size:40px;
+    font-style:normal;
+    font-family:"Times New Roman", Georgia, Serif;
+}
+
+.container-control {
+    height: auto;
+    width: 700px;
+    float: left;
+}
+
+.user-name {
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: #FF9966;
+    padding: 20px 30px;
+}
+
+.episode-script-content {
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  padding: 0px 30px;
+}
+
+.clear {
+  clear: both;
+  font-size:1px;
+  width:1px;
+  visibility: hidden;
+}
+
+.episode-image-content {
+}
+
+.episode-post-time {
+  text-align: right;
+  padding-right: 30px; 
+}
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;

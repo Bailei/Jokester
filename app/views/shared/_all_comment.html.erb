@@ -1,0 +1,21 @@
+<div class="container container-control" id="<%= all_comment.id %>">
+	<div class="panel panel-default">
+      <div class="media-heading user-name">
+        <%= all_comment.name %>
+      </div>
+
+	  <div class="media-body episode-script-content">
+	    <%= all_comment.content %>
+	  </div>
+
+	  <div class="media-body episode-post-time" style="padding-bottom:15px">
+         <% 
+           tmp_time = all_comment.created_at
+           res = tmp_time.to_s.split()
+           res = res[0..(res.length-2)]
+           created_at_time = res.join(" ")
+         %>
+         <%= created_at_time %>
+      </div>
+    </div>
+</div>

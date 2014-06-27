@@ -1,0 +1,29 @@
+<% provide(:title, 'Upload') %>
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title  main-page-title">Jokester</h3>
+    </div>
+    <div class="panel-body">
+         <%= form_for(@episode) do |f| %>
+             <div class="input-group">
+               <%= f.label :name %>
+               <%= f.text_field :name, class: "form-control", placeholder: "Please enter your name..."%>
+             </div>
+             <div class="clear" style="height:10px"></div>
+             <div class="form-group">
+               <%= f.label :script %>
+               <%= f.text_area :script, class: "form-control", placeholder: "Please edit your episode...", style: "width:600px;height:300px"%>
+             </div>
+             <div style="float:left">
+               <%= f.label :image %>
+               <%= f.file_field :image, class: "", value: "Choose image"%>
+             </div>
+             
+             <div style="float:right;padding-top:10px;padding-right:310px">
+                 <%= f.submit "Upload", class: "btn btn-large btn-primary", style: "width:80px"%>
+             </div>
+         <% end %>
+    </div>
+  </div>
+</div>
