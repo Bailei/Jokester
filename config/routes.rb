@@ -1,5 +1,9 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   root 'static_pages#home'
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -12,13 +16,14 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via:'get'
 
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   
-  resources :episodes
-  match "/renders/dashboard", to:"renders#dashboard", via: 'get'
-  match "/upload", to: "episodes#new",  via: 'get' 
-  #root to: "renders#home"
-  match "/estimate", to: "renders#estimate", via: 'post'
-  match "/renders/produce", to: "renders#produce", via: 'post'
+  # resources :episodes
+  # match "/renders/dashboard", to:"renders#dashboard", via: 'get'
+  # match "/upload", to: "episodes#new",  via: 'get' 
+  # #root to: "renders#home"
+  # match "/estimate", to: "renders#estimate", via: 'post'
+  # match "/renders/produce", to: "renders#produce", via: 'post'
 
 
 
